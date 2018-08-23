@@ -26,6 +26,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'ap/vim-buftabline'
 
 "----  Plugin List End  ----
 
@@ -36,6 +37,9 @@ filetype plugin indent on
 autocmd VimEnter * NERDTree %:p:h
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd VimEnter * wincmd p
+
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 colorscheme codedark
 let g:airline_theme = 'codedark'
