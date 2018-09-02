@@ -1,4 +1,9 @@
+" P.Knowledge(0x00000FF)'s .vimrc
+
+set encoding=utf-8
+
 syntax on
+set number
 set showmatch
 set ruler
 set hls
@@ -23,6 +28,12 @@ set shiftwidth=4
 set softtabstop=4
 filetype indent on
 
+"" autoindent setting for each file types
+augroup IndentAdjustment
+    au!
+    autocmd FileType    Makefile    set expandtab!
+augroup end
+
 " Vundle settings
 set nocompatible
 filetype off
@@ -37,6 +48,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'ap/vim-buftabline'
+Plugin '0x00000FF/vim-linecount'
 
 "----  Plugin List End  ----
 
@@ -48,13 +60,14 @@ filetype plugin indent on
 augroup NERDTreeAutoCmd
     au!
     autocmd VimEnter * NERDTree %:p:h
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     autocmd VimEnter * wincmd p
 augroup END
 
 " Buftabline Settings
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+nnoremap <C-D> :bd<CR>
 
 " Colorscheme
 colorscheme codedark
