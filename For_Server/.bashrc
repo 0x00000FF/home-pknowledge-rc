@@ -1,5 +1,7 @@
 # .bashrc for CentOS or other servers maintenance
 
+alias ls='ls --color=auto'
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
