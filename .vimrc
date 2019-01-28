@@ -48,7 +48,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'ap/vim-buftabline'
-Plugin '0x00000FF/vim-linecount'
 
 "----  Plugin List End  ----
 
