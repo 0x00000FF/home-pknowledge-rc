@@ -13,15 +13,42 @@ tray-maxsize  = 16
 
 [bar/bottom]
 font-0 = "Source Code Pro:size=11"
-font-1 = "Source Han Sans KR Medium:size=11"
-font-2 = "Source Han Sans JP Medium:size=11"
+font-1 = "Font Awesome 5 Brands Regular:size=11"
+font-2 = "Font Awesome 5 Free Solid:size=11"
 
 bottom = true
 
 background = #303030
 
+modules-left = battery
 modules-right = wire-network wireless-network pulseaudio cpu memory date
 
+[module/battery]
+type = internal/battery
+
+; battery lifetime reaches end
+full-at = 100
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+;time-format = %H:%M
+
+format-charging = <bar-capacity>
+format-charging-foreground = #f00000fe
+
+format-discharging = <bar-capacity>
+format-discharging-foreground = #f0fe0000
+
+format-full = FULL
+format-full-foreground = #f000fe00
+
+label-batt = BATT
+label-full = FULL
+
+bar-capacity-width = 15
 
 [module/wire-network]
 type = internal/network
@@ -31,7 +58,10 @@ interval = 3.0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected = WRN %downspeed:9%
+format-connected-padding = 2
+format-disconnected-padding = 2
+
+label-connected = \uf6ff %downspeed:9%
 label-connected-foreground = #ee00fa00
 
 label-disconnected = NO-SIGNAL
@@ -45,10 +75,8 @@ interval = 3.0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-format-connected-padding = 2
-format-disconnected-padding = 2
 
-label-connected = WRL %downspeed:8%
+label-connected =  %essid%:%local_ip%
 label-connected-foreground = #ee00fa00
 
 label-disconnected = NO-SIGNAL
@@ -64,21 +92,25 @@ interval = 5
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 2
 
+format-muted = <label-muted>
+format-muted-padding = 2
+
 ; Available tokens:
 ;   %percentage% (default)
 ;   %decibels% (unreleased)
-label-muted = 🔇 muted
+label-volume = %percentage:4%%
+
+label-muted =  muted
 label-muted-foreground = #666
 
-; Only applies if <ramp-volume> is used
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/cpu]
 type = internal/cpu
 interval = 1.0
-label = CPU %percentage:3%%
+label =  %percentage:3%%
 format-padding = 0 
 
 [module/memory]
@@ -86,12 +118,12 @@ type = internal/memory
 interval = 2
 format = <label>
 format-padding = 2
-label = RAM %gb_used:5%/%gb_total:5%
+label =  %gb_used:5%/%gb_total:5%
 
 [module/date]
 type = internal/date
 interval = 1.0
-date = %Y-%m-%d %H:%M:%S%
+date =  %Y-%m-%d  %H:%M:%S%
 
 [module/title]
 type = internal/xwindow
@@ -100,7 +132,7 @@ format-foreground = #fff
 format-padding = 0
 
 label = %title%
-label-maxlen = 50
+label-maxlen = 128
 
 label-empty = No_Title
 label-empty-foreground = #ff0000
