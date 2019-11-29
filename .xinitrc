@@ -10,6 +10,5 @@ export XMODIFIERS='@im=uim'
 
 export LIBVA_DRIVER_NAME=iHD
 
-xrandr --output DP1 --right-of HDMI1
 
 exec i3
