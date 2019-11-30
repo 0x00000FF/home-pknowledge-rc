@@ -61,7 +61,7 @@ format-disconnected = <label-disconnected>
 format-connected-padding = 2
 format-disconnected-padding = 2
 
-label-connected = \uf6ff %downspeed:9%
+label-connected = \uf6ff %local_ip%
 label-connected-foreground = #ee00fa00
 
 label-disconnected = NO-SIGNAL
@@ -123,13 +123,13 @@ label =  %gb_used:5%/%gb_total:5%
 [module/date]
 type = internal/date
 interval = 1.0
-date =  %Y-%m-%d  %H:%M:%S%
+date =  %F %a  %T %Z%
 
 [module/title]
 type = internal/xwindow
 format = <label>
 format-foreground = #fff
-format-padding = 0
+format-padding = 1
 
 label = %title%
 label-maxlen = 128
