@@ -69,7 +69,7 @@ format-disconnected = <label-disconnected>
 format-connected-padding = 2
 format-disconnected-padding = 2
 
-label-connected =  %local_ip%
+label-connected =  %downspeed%
 label-connected-foreground = #ee00fa00
 
 label-disconnected = NO-SIGNAL
