@@ -1,5 +1,5 @@
 [bar/top]
-font-0 = "Source Code Pro:size=11"
+font-0 = "Noto Sans:size=11"
 font-1 = "Source Han Sans KR Medium:size=11"
 font-2 = "Source Han Sans JP Medium:size=11"
 
@@ -11,8 +11,9 @@ tray-position = right
 tray-detached = false
 tray-maxsize  = 16
 
+
 [bar/bottom]
-font-0 = "Source Code Pro:size=11"
+font-0 = "Noto Sans:size=11"
 font-1 = "Font Awesome 5 Brands Regular:size=11"
 font-2 = "Font Awesome 5 Free Solid:size=11"
 
@@ -27,28 +28,35 @@ modules-right = wire-network wireless-network pulseaudio cpu memory date
 type = internal/battery
 
 ; battery lifetime reaches end
-full-at = 100
+full-at = 20
 
 battery = BAT0
 adapter = ADP1
 
-poll-interval = 5
+poll-interval = 2
 
 ;time-format = %H:%M
 
-format-charging = <bar-capacity>
-format-charging-foreground = #f00000fe
+format-charging =  <bar-capacity> CHARGING
+format-charging-foreground = #f03000fe
+format-charging-padding = 1 
 
-format-discharging = <bar-capacity>
+format-discharging =  <bar-capacity> <label-discharging>
 format-discharging-foreground = #f0fe0000
+format-discharging-format = 1
 
-format-full = FULL
+format-full =  FULL
 format-full-foreground = #f000fe00
+format-full-format = 1
 
 label-batt = BATT
 label-full = FULL
+label-discharging = %time%
 
 bar-capacity-width = 15
+bar-capacity-empty = - 
+bar-capacity-fill = -
+bar-capacity-indicator = |
 
 [module/wire-network]
 type = internal/network
@@ -61,7 +69,7 @@ format-disconnected = <label-disconnected>
 format-connected-padding = 2
 format-disconnected-padding = 2
 
-label-connected = \uf6ff %local_ip%
+label-connected =  %local_ip%
 label-connected-foreground = #ee00fa00
 
 label-disconnected = NO-SIGNAL
