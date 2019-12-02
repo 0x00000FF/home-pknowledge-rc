@@ -3,6 +3,6 @@ URxvt.shading:20
 
 URxvt*scrollBar: false
 
-URxvt*font: xft:Source Code Pro Medium:style=Italic:antialias:size=11
+URxvt*font: xft:Source Code Pro Medium:style=Italic:antialias:size=11,xft:SauceCodePro Nerd Font Mono:style=Medium:antialias:size=12
 URxvt*foreground: #eeeeee
 URxvt*background: #000000

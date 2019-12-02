@@ -34,25 +34,28 @@ augroup IndentAdjustment
     autocmd FileType    Makefile    set expandtab!
 augroup end
 
-" Vundle settings
+" vim-plugin setting
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+
+call plug#begin('~/.vim/plugged')
 
 "---- Plugin List Begin ----
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'ap/vim-buftabline'
-Plugin 'ryanoasis/vim-devicons'
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'tomasiser/vim-code-dark'
+Plun 'ap/vim-buftabline'
+Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "----  Plugin List End  ----
 
-call vundle#end()
+call plug#end()
+
+" vim-plugin end
 
 filetype plugin indent on
 
